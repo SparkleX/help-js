@@ -1,0 +1,21 @@
+<mvc:View
+	controllerName="sap.b1.module.udt.controller.List"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:b1="sap.b1.core.control"
+	displayBlock="true">
+	<List
+		headerText="Orders"
+		items="{list>/}" >
+		<items>
+			<ObjectListItem title="{list>DocEntry}" type="Active" press="onListItemPress">
+				<attributes>
+					<ObjectAttribute text="{list>CardCode}" />
+				</attributes>
+			</ObjectListItem>
+		</items>
+	</List>	
+	<Button text="Nav To Detail" press=".onTestClick"/>
+</mvc:View>

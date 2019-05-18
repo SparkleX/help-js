@@ -1,0 +1,14 @@
+{
+    "name": "web-server",
+    "version": "1.0.0",
+    "main": "node server.js",
+    "scripts": {
+        "start": "npm install && node server.js"
+    },
+    "dependencies": {
+        "koa": "^2.0.0",
+        "koa-logger": "^3.0.0",
+        "koa-static": "^3.0.0"
+    },
+    "devDependencies": {}
+}

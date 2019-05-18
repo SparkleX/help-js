@@ -1,0 +1,38 @@
+<OrderReports xmlns="http://localhost:8080" 
+	targetNamespace="http://localhost:8080"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://localhost:8080 http://localhost:8080/Order.xsd"
+	elementFormDefault="qualified">
+	<Order>
+		<DocEntry>100</DocEntry>
+		<CardCode>C001</CardCode>
+		<DocTotal>1.02</DocTotal>
+		<Detail>
+			<LineNum>1</LineNum>
+			<ItemCode>I001</ItemCode>
+			<LineTotal>100</LineTotal>
+		</Detail>
+		<Detail>
+			<LineNum>2</LineNum>
+			<ItemCode>I002</ItemCode>
+			<LineTotal>200</LineTotal>
+		</Detail>
+
+	</Order>
+	<Order>
+		<DocEntry>101</DocEntry>
+		<CardCode>C002</CardCode>
+		<DocTotal>1.02</DocTotal>
+		<Detail>
+			<LineNum>1</LineNum>
+			<ItemCode>I001</ItemCode>
+			<LineTotal>100</LineTotal>
+		</Detail>
+		<Detail>
+			<LineNum>2</LineNum>
+			<ItemCode>I002</ItemCode>
+			<LineTotal>200</LineTotal>
+		</Detail>
+
+	</Order>
+</OrderReports>

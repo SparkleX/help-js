@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Test</title>
+<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+<script type="module" src="./src/index.js" deffer></script>
+
+</head>
+<body>
+	<div id="vue_det">
+		<detail-view>
+		<h1>site : {{site}}</h1>
+		<h1>url : {{url}}</h1>
+		<h1>{{details()}}</h1>
+		<input v-model="textVal"></input>
+		<button v-on:click="onClick">Button</button>
+		<button-counter title="abc"></button-counter>
+		<data-edit v-model="textVal" bind="test"></data-edit>
+		<data-button :click="onClickSave">Save</data-button> 
+		</detail-view>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://localhost:8080"
+	xmlns="http://localhost:8080"
+	elementFormDefault="qualified">
+	<!-- -->
+	<xs:element name="OrderReports">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Order" type="Order" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Order">
+		<xs:sequence>
+			<xs:element name="DocEntry" type="xs:int" />
+			<xs:element name="CardCode" type="xs:string" />
+			<xs:element name="DocTotal" type="xs:float" />
+			<xs:element name="Detail" type="Detail" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Detail">
+		<xs:sequence>
+			<xs:element name="LineNum" type="xs:int" />
+			<xs:element name="ItemCode" type="xs:string" />
+			<xs:element name="LineTotal" type="xs:float" />
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

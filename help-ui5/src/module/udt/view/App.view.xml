@@ -1,0 +1,61 @@
+<mvc:View
+	controllerName="sap.b1.module.udt.controller.App"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:b1="sap.b1.core.control"
+	xmlns:semantic="sap.m.semantic"
+	displayBlock="true">
+	<semantic:FullscreenPage>
+		<App>
+			<pages>
+				<Page title="{i18n>homePageTitle}">
+					<content>
+						<l:VerticalLayout width="100%">
+							<l:Grid containerQuery="true">
+								<b1:Item id="id1" text="{i18n>BpCode}" value="{/CardCode}"/>
+								<b1:Item id="id2" text="{i18n>BpName}" value="{/Status}"/>
+								<b1:Input id="idB1Input" value="{/CardCode}" b1bind="ORDR.CardCode"/>
+								<Label text="Business Partner Code" labelFor="idInput"/>	
+						
+								<Input id="idInput" value="{/CardCode}" required="true"/>
+								<Label text="Document Status" labelFor="idCombo"/>	
+								<ComboBox id="idCombo" value="{/Status}" >
+									<core:Item key="{key}" text="{text}" />
+								</ComboBox>
+								<Label text="Closed" labelFor="idClosed"/>
+								<CheckBox id="idClosed" selected="{=${/Status}==='Y'}"/>
+								<Label text="Document Tital" labelFor="idDocTotal"/>	
+								<Input id="idDocTotal" value="{/DocTotal}" required="true"/>		
+								<Button text="Show Dialog" press=".onOpenDialog"/>		
+								<Button text="Test" press=".onTestClick"/>								
+								
+							</l:Grid>
+						</l:VerticalLayout>
+						<Panel
+							headerText="{i18n>helloPanelTitle}">
+							<content>
+								<Button
+									text="{i18n>showHelloButtonText}"
+									press=".onShowHello"/>
+								<Input
+									value="{/recipient/name}"
+									description="Hello {/recipient/name}"
+									valueLiveUpdate="true"
+									width="60%"/>
+								<b1:ProductRating id="rating" class="sapUiSmallMarginBeginEnd" change=".onRatingChange"/>
+							</content>
+						</Panel>
+					</content>
+				</Page>
+			</pages>
+		</App>
+		<semantic:addAction>
+			<semantic:AddAction press="onSemanticButtonPress"/>
+		</semantic:addAction>
+		<semantic:editAction>
+			<semantic:EditAction press="onSemanticButtonPress"/>
+		</semantic:editAction>		
+	</semantic:FullscreenPage>
+</mvc:View>
