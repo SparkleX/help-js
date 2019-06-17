@@ -6,34 +6,25 @@ sap.ui.define([
 ], function (Controller, MessageToast, Fragment, JSONModel) {
 	"use strict";
 
-	return Controller.extend("app.core.controller.Detail", {
+	return Controller.extend("app.core.controller.BaseDetailController", {
 		onInit: function() {
-			var oRouter = this.getOwnerComponent().getRouter();
+			var component =  this.getOwnerComponent();
+			var oRouter = component.getRouter();
 			oRouter.getRoute("detail").attachMatched(function(oEvent) {
 				this.onLoad(oEvent.getParameter("arguments").id);
 			}, this);
+			
+			var omFormMode = new JSONModel({"editable":false});
+			component.setModel(omFormMode, "form");
         },
 		onLoad : function(id) {
         	var oModel = new JSONModel();
 			oModel.loadData("mock/data.json",null,false);	
 			this.getOwnerComponent().setModel(oModel);
-			this.loop(this.getView().getContent());
 		},
 		onNavBack : function()
 		{
 			window.history.back();
-		},
-		loop: function(content)
-		{
-			for(var k in content)
-			{
-				var item = content[k];
-				console.log(item.getMetadata().getName());
-				if(item.getContent!==undefined)
-				{
-					this.loop(item.getContent());
-				}
-			}
 		}
 	});
 

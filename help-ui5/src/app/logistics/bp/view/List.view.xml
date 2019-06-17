@@ -1,5 +1,5 @@
 <mvc:View
-	controllerName="app.core.controller.List"
+	controllerName="app.logistics.bp.controller.List"
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc"
