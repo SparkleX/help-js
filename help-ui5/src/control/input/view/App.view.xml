@@ -1,0 +1,31 @@
+<mvc:View controllerName="help.controller.App"
+		  xmlns="sap.m"
+		  xmlns:mvc="sap.ui.core.mvc"
+		  xmlns:core="sap.ui.core"
+		  displayBlock="true">
+		<Label text="Document Number" labelFor="idNum"/>					
+		<Input id="idNum" value="{/DocNum}" required="true"/>
+		<Label text="Document Total" labelFor="idTotal"/>					
+		<Input id="idTotal" value="{/DocTotal}" textAlign="Right" required="true"/>
+		
+		<Label text="Status" labelFor="idStatus"/>
+		<ComboBox id="idStatus" 
+			value="{/Status}" 
+			showSecondaryValues= "true"
+			items="{vv>/ORDR_Status}">
+			<core:ListItem key="{vv>Value}" text="{vv>Desc}" additionalText = "{vv>Value}"/>
+		</ComboBox>		
+<!--		<Input id="idDesc" 
+			value="{/Status}" 
+			textFormatMode="KeyValue" 
+			showSuggestion="true"
+			showValueHelp="true"
+			required="true"
+			suggestionItems="{vv>/ORDR_Status}">
+			<suggestionItems>
+				<core:ListItem key="{Value}" text="{Desc}"/>
+			</suggestionItems>		
+		</Input>	-->
+
+
+</mvc:View>

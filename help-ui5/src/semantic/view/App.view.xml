@@ -1,0 +1,32 @@
+<mvc:View
+		height="100%"
+		xmlns:core="sap.ui.core"
+		xmlns:mvc="sap.ui.core.mvc"
+		controllerName="help.controller.App"
+		xmlns="sap.m"
+		xmlns:semantic="sap.m.semantic"
+		xmlns:ui="sap.ca.ui"
+		displayBlock="true">
+
+			<semantic:FullscreenPage title="FullScreen Page Title"
+									 showNavButton="true"
+									 navButtonPress="onNavButtonPress">
+		<Label text="Document Number" labelFor="idNum"/>					
+		<Input id="idNum" value="{/DocNum}" required="true"/>
+		<Label text="Document Total" labelFor="idTotal"/>					
+		<Input id="idTotal" value="{/DocTotal}" textAlign="Right" required="true"/>
+		
+		<Label text="Status" labelFor="idStatus"/>
+		<ComboBox id="idStatus" 
+			value="{/Status}" 
+			showSecondaryValues= "true"
+			items="{vv>/ORDR_Status}">
+			<core:ListItem key="{vv>Value}" text="{vv>Desc}" additionalText = "{vv>Value}"/>
+		</ComboBox>											 
+					<semantic:addAction>
+						<semantic:AddAction press="onSemanticButtonPress"/>
+					</semantic:addAction>
+
+			</semantic:FullscreenPage>
+
+</mvc:View>

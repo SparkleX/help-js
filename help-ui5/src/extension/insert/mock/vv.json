@@ -1,0 +1,13 @@
+{
+	"ORDR_Status":
+	[
+		{
+			"Value":"O",
+			"Desc":"Open"
+		},
+		{
+			"Value":"C",
+			"Desc":"Close"
+		}
+	]	
+}
