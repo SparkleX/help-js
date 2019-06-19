@@ -4,24 +4,31 @@ sap.ui.define([
 	"sap/ui/model/type/Boolean"
 ], function (Control, Input, TypeBoolean) {
 	"use strict";
-	return Input.extend("app.core.control.Input", {
+	var CrudInput =  Input.extend("app.core.control.Input", {
 		metadata : {
 			properties : {
-				b1bind:  {type : "string", defaultValue : null}
+				//editable:  {type: "boolean", group: "Behavior",  defaultValue:"{= ${form>/formMode} ==='editMode'}"}
 			}
-		},
-		init : function () {
-			Input.prototype.init.call(this);
-			var editable = this.getProperty("editable");
-			if(editable==null){
-				this.bindProperty("editable", {
-					path: "form>/editable",
-					type: new TypeBoolean()
-				});
-			}
-		},
-		setEditable : function(sValue){
-			this.setProperty("editable", sValue, true);
 		}
 	});
+
+	CrudInput.prototype.init = function () {
+		//this.metadata.properties.editable = {type: "boolean", group: "Behavior",  defaultValue:"{= ${form>/formMode} ==='editMode'}"};
+		Input.prototype.init.call(this);
+		//this.editable = "{= ${form>/formMode} ==='editMode'}";
+	//	var aa = this.getPropertyDefaults();
+		/*var editable = this.getProperty("editable");
+		if(editable==null){
+			this.bindProperty("editable", {
+				path: "{= ${form>/formMode} ==='editMode'}",
+				type: new TypeBoolean()
+			});
+			//this.bindProperty("editable", "= ${form>/formMode} ==='editMode'");
+		}*/
+	};/*,
+		setEditable : function(sValue){
+			this.setProperty("editable", sValue, true);
+		}*/
+
+	return CrudInput;
 });

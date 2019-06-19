@@ -1,6 +1,8 @@
 {
-	"TransId":1,
-	"Total":100,
+	"BpCurrency": "B",
+	"TransId": 1,
+	"Total": 100,
+	"Active": true,
 	"JDT1" : [
 		{
 			"AcctCode":"100001",

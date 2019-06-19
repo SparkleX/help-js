@@ -8,6 +8,7 @@
 	displayBlock="true">
 	<Page title="{i18n>list/title}">
 	<content>
+
 	<List
 		items="{list>/}" >
 		<items>
