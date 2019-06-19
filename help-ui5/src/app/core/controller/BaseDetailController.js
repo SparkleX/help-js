@@ -19,6 +19,7 @@ sap.ui.define([
 			var data = {editable:false, formMode: FormMode.viewMode}
 			var omFormMode = new JSONModel(data);
 			component.setModel(omFormMode, "form");
+
 	};
 	BaseDetailController.prototype.onLoad = function(id) {
 		var oModel = new JSONModel();

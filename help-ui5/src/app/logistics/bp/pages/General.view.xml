@@ -1,23 +1,22 @@
 <mvc:View
+	id="idGeneralView"
 	controllerName="app.logistics.bp.pages.General" 
 	xmlns:layout="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:form="sap.ui.layout.form"
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core"
-	xmlns:core-control="app.core.control"
-	id="general"
+	xmlns:core-control="app.core.control"	
 	width="100%">
+<Select id="idTest"/>	
 	<layout:Grid width="100%" defaultSpan="L6 M6 S12">
-
 		<layout:content>
-		
 			<form:SimpleForm layout="ColumnLayout">
 				<core:Title text="Currency"/>
 				<form:content>
 					<Label text="Display Currency" labelFor="bpCurrency" />
-					<Select id="bpCurrency" selectedKey="{/BpCurrency}" items="{bpCurrency>/}" change="onChangeBpCurrency">
-						<core:Item key="{bpCurrency>value}" text="{bpCurrency>desc}" />
+					<Select id="bpCurrency" showSecondaryValues="true" selectedKey="{/BpCurrency}" items="{bpCurrency>/}">
+						<core:ListItem key="{bpCurrency>value}" text="{bpCurrency>desc}" additionalText="{bpCurrency>value}"/>
 					</Select>					
 					<Label text="Active" labelFor="idActive"/>
 					<Switch id="idActive" state="{/Active}"/>
@@ -38,7 +37,13 @@
 					<Label text="Name"/>
 					<Input value="{/Total}" required="true" />
 					<Label text="Foreign Name"/>
-					<Input value="{/Total}" required="true" valueLiveUpdate="true" liveChange=".onChangeFName"/>
+					<Input value="{/Total}" required="true" valueLiveUpdate="true" liveChange="onChangeFName"/>
+					<Label text="Consolidate BP"/>
+					<Input value="{/ConBP}" />
+					<Select id="idConBp" selectedKey="{/ConBP}" showSecondaryValues="true" forceSelection="false">
+						<core:ListItem key="C200" text="2"/>
+						<core:ListItem key="C100" text="1"/>
+					</Select>
 				</form:content>
 			</form:SimpleForm>				
 			<form:SimpleForm layout="ColumnLayout" >

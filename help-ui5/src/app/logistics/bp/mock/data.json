@@ -3,6 +3,7 @@
 	"TransId": 1,
 	"Total": 100,
 	"Active": true,
+	"ConBP" : "C200",
 	"JDT1" : [
 		{
 			"AcctCode":"100001",

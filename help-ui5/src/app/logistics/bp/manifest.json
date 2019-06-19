@@ -14,6 +14,7 @@
 		"sap.ui.layout": {}
 	},	
 	"sap.ui": {
+		
 		"technology": "UI5",
 		"deviceTypes": {
 			"desktop": true,
