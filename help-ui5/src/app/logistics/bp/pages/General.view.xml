@@ -1,6 +1,6 @@
 <mvc:View
 	id="idGeneralView"
-	controllerName="app.logistics.bp.pages.General" 
+	controllerName="app.logistics.bp.controller.GeneralPage" 
 	xmlns:layout="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:form="sap.ui.layout.form"
@@ -41,8 +41,7 @@
 					<Label text="Consolidate BP"/>
 					<Input value="{/ConBP}" />
 					<Select id="idConBp" selectedKey="{/ConBP}" showSecondaryValues="true" forceSelection="false">
-						<core:ListItem key="C200" text="2"/>
-						<core:ListItem key="C100" text="1"/>
+
 					</Select>
 				</form:content>
 			</form:SimpleForm>				
