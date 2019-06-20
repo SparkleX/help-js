@@ -14,6 +14,7 @@ sap.ui.define([
 		var oModel = new JSONModel();
 		oModel.loadData("mock/bpCurrency.json",null,false);	
 		this.getOwnerComponent().setModel(oModel, "bpCurrency");
+	//	alert(this.byId("idConBp"));
 	}
 
 	Detail.prototype.onChangeFName=function(oEvent) {
